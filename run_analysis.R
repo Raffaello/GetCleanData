@@ -93,6 +93,7 @@ rm(X); rm(y); rm(subject);
 message("Writing tidy dataset...")
 tidypath="merged/tidy.csv"
 write.csv(tidyset, file=tidypath, row.names=FALSE)
+write.table(tidyset, file="merged/tidy.txt", sep="\t", row.names=FALSE)
 
 message("checking tidy dataset...")
 tidy <- read.csv(tidypath, header=TRUE)
@@ -106,21 +107,6 @@ rm(d1); rm(d2); rm(tidy); rm(tidypath)
 
 ###Part 5
 #Creates a second, independent tidy data set 
-#with the average of 
-#each variable for each activity 
-#and each subject. 
-
-
-#means <- sapply(X, FUN=function(x){mean(x, na.rm=TRUE)})
-#names(means) <- NULL
-#stds  <- sapply(X, FUN=function(x){sd(x, na.rm=TRUE)})
-#names(stds) <- NULL
-#X <- data.frame(cbind(means,stds))
-#names(X) <- c("Mean", "Std")
-
-
-
-## dal tidy dataset facendone uno nuovo.
 #extract column information for 2° tidy set
 message("Making average tidyset...")
 activityLabel <- names(table(tidyset$Activity))
@@ -182,6 +168,7 @@ rm(k); rm(nRows);
 message("Writing mean tidy dataset...")
 tidypath="merged/avgtidy.csv"
 write.csv(avgtidyset, file=tidypath, row.names=FALSE)
+write.table(avgtidyset, file="merged/avgtidy.txt", sep="\t", row.names=FALSE)
 
 message("checking avgtidy.csv dataset...")
 tidy <- read.csv(tidypath, header=TRUE)

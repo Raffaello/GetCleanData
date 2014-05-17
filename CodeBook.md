@@ -30,7 +30,7 @@ These signals were used to estimate variables of the feature vector for each pat
 - fBodyGyroMag
 - fBodyGyroJerkMag
 
-***NOTE:*** the features start with `t` are time-based, with `f` are frequencyDomain based-
+***NOTE:*** the features start with `t` are time-based, with `f` are frequencyDomain based.
 
 The set of variables that were estimated from these signals are: 
 
