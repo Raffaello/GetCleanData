@@ -14,7 +14,23 @@ Getting &amp; Cleaning Data Project (coursera assigment.)
 
 #Tidy Data
 
-The data are merged in one big files (`merged/tidy.csv`) with header. The features extracted are with the `mean` or `std` function present. It relies on the pattern matching where the word `mean` or `std` is present. 
+The data are merged in one big files (`merged/tidy.csv`) with header. The features extracted are with the following function used:
+
+- `mean()`: mean.
+- `std()` : standard deviation.
+- `mad()` : median average deviation.
+
+Every function is normalized in the range [-1,1] for the respective axis X, Y, Z.
+These features are used for tidy data and they were chosen for summarize better the entire dataset. 
+
+Almost all the others features are not carrying some general usefull information, but specific one. Moreover some of the features can be derivated from this tidy data.  
+
+The full dataset is composed by 561 features plus 2 more columns for class label and Subject. 
+The resultant tidy dataset is composed by 99 + 2. 
+
+## Composition
+
+From the dataset, are extracted all the features containing the word `means()`, `std()` and `mad()` using regular expression. All the others are discarded. 
 
 # Script Steps
 1. Check if the data-set is present in the working directory. If no it download and unzip (If you have problem with downloaded data download it manually from the link above, and extract it in the working directory).
@@ -43,6 +59,9 @@ Run the `run_analysis.R` with R or RStudio.
 # Results
 
 The results are in the subdir `merged`
+
+## Graphics result
+
 	    
     
     
