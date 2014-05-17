@@ -24,16 +24,24 @@ allFiles[grep("activity_labels.txt$",allFiles)]
 activityLabels <- read.table(allFiles[grep("activity_labels.txt$",allFiles)], header=F, stringsAsFactors=FALSE)
 activityLabels <- activityLabels[,"V2"]
 activityLabels <- gsub("_",".",tolower(activityLabels))
-activityLabels <- gsub("(^[a-z]{1})","\\U\\1",activityLabels,perl=TRUE)
-activityLabels <- gsub("(\\.[a-z]{1})","\\U\\1",activityLabels, perl=TRUE)
+#activityLabels <- gsub("(^[a-z]{1})","\\U\\1",activityLabels,perl=TRUE)
+#activityLabels <- gsub("(\\.[a-z]{1})","\\U\\1",activityLabels, perl=TRUE)
 
 message("Reading Features name...")
 featuresName <- simplify2array(read.table(allFiles[grep("features.txt$",allFiles)],header=F, stringsAsFactors=FALSE)$V2)
+featuresName <- gsub("(-[xyz]{1}$)","\\U\\1",tolower(featuresName),perl=TRUE)
 fmean <- grep("mean", featuresName)
 fstd  <- grep("std", featuresName)
 features <- c(fmean,fstd)
 rm(fmean,fstd)
 rm(allFiles)
+
+#avgFeaturesName
+#avgFeatures = round(length(featuresName)/3)
+#check
+#if(avgFeatures*3 != length(featuresName)) {
+#  stop("Error in dataset.")
+#}
 
 #nameFiles <- strsplit(trainFiles,'/')
 #nameFiles <- sapply(nameFiles, FUN=function(x){tail(x,1)})
@@ -49,7 +57,7 @@ rm(allFiles)
 #Create subdir to store merged results
 if(!file.exists("./merged"))
 {
-  message("Creating dir ('merged') to store tiny dataset.")
+  message("Creating dir ('merged') to store tidy dataset.")
   dir.create("./merged")
 }
 
@@ -88,24 +96,29 @@ rm(featuresName)
 rm(features)
 rm(trainFiles); rm(testFiles);
 
-message("Make tiny dataset...")
+message("Make tidy dataset...")
 table <- cbind(X,subject,y)
 rm(X); rm(y); rm(subject);
 
-message("Writing tiny dataset...")
-tinypath="merged/tiny.csv"
-write.csv(table, file=tinypath, row.names=FALSE)
+message("Writing tidy dataset...")
+tidypath="merged/tidy.csv"
+write.csv(table, file=tidypath, row.names=FALSE)
 
-message("checking tiny dataset...")
-tiny <- read.csv(tinypath, header=TRUE)
+message("checking tidy dataset...")
+tidy <- read.csv(tidypath, header=TRUE)
 d1 <- dim(table)
-d2 <- dim(tiny)
+d2 <- dim(tidy)
 if(d1[1] != d2[1] | d1[2] != d2[2]) {
-  stop("Error on tiny dataset. STOP.")
+  stop("Error on tidy dataset. STOP.")
 } else message("OK!")
   
-rm(d1); rm(d2); rm(tiny);
+rm(d1); rm(d2); rm(tidy);
 
+###Part 5
+#Creates a second, independent tidy data set 
+#with the average of 
+#each variable for each activity 
+#and each subject. 
 
 
 #means <- sapply(X, FUN=function(x){mean(x, na.rm=TRUE)})

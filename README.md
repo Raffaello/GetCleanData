@@ -9,12 +9,12 @@ Getting &amp; Cleaning Data Project (coursera assigment.)
 
 #Description
 
-- This script build a tiny dataset from [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "getdata-projectfiles-UCI HAR Dataset.zip")
-- The tiny dataset as the following diagram: ![Slide2.png](https://raw.githubusercontent.com/Raffaello/GetCleanData/master/doc/Slide2.png)
+- This script build a tidy dataset from [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "getdata-projectfiles-UCI HAR Dataset.zip")
+- The tidy dataset as the following diagram: ![Slide2.png](https://raw.githubusercontent.com/Raffaello/GetCleanData/master/doc/Slide2.png)
 
-#Tiny Data
+#Tidy Data
 
-The data are merged in one big files (`merged/tiny.csv`) with header. The features extracted are with the `mean` or `std` function present. It relies on the pattern matching where the word `mean` or `std` is present. 
+The data are merged in one big files (`merged/tidy.csv`) with header. The features extracted are with the `mean` or `std` function present. It relies on the pattern matching where the word `mean` or `std` is present. 
 
 # Script Steps
 1. Check if the data-set is present in the working directory. If no it download and unzip (If you have problem with downloaded data download it manually from the link above, and extract it in the working directory).
@@ -34,7 +34,11 @@ Clone the repository.
 
 	git clone https://github.com/Raffaello/GetCleanData.git
 
-Run the `run_analysis.R` with R or RStudio
+(*Optional*) Unzip the dataset inside the working directory.
+
+Run the `run_analysis.R` with R or RStudio.
+
+
 
 # Results
 
