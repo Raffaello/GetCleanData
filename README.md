@@ -68,4 +68,4 @@ Run the `run_analysis.R` with R or RStudio.
 
 ## Results
 
-The results are in the subdir `merged`. There is one version in `CSV` and one with `TAB` delimiter for both tidy dataset.     
+The results are in the subdir `merged`. There is one version in `CSV` and one with `TAB` delimiter for both dataset.     
