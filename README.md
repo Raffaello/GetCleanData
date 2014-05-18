@@ -14,7 +14,7 @@ Getting &amp; Cleaning Data Project (coursera assigment.)
 
 ##Tidy Data
 
-***NOTE:** The required result is store in the `avgtidy.csv` file.*
+NOTE: The required result is store in the `avgtidy.csv` file.
 
 ###Large dataset 
  
@@ -34,7 +34,7 @@ The resultant build dataset is composed by 99 + 2.
 
 #### Composition
 
-From the dataset, are extracted all the features containing the word `means()`, `std()` and `mad()` using regular expression. All the others are discarded.
+From the dataset are extracted all the features containing the words `means()`, `std()` and `mad()` using regular expression. All others are discarded.
 
 ### Tidy dataset
 
