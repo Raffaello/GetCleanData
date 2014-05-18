@@ -12,25 +12,28 @@ These signals were used to estimate variables of the feature vector for each pat
 
 `-XYZ` is used to denote 3-axial signals in the X, Y and Z directions.
 
-- tBodyAcc-XYZ
-- tGravityAcc-XYZ
-- tBodyAccJerk-XYZ
-- tBodyGyro-XYZ
-- tBodyGyroJerk-XYZ
-- tBodyAccMag
-- tGravityAccMag
-- tBodyAccJerkMag
-- tBodyGyroMag
-- tBodyGyroJerkMag
-- fBodyAcc-XYZ
-- fBodyAccJerk-XYZ
-- fBodyGyro-XYZ
-- fBodyAccMag
-- fBodyAccJerkMag
-- fBodyGyroMag
-- fBodyGyroJerkMag
+- avgtBodyAcc-XYZ
+- avgtGravityAcc-XYZ
+- avgtBodyAccJerk-XYZ
+- avgtBodyGyro-XYZ
+- avgtBodyGyroJerk-XYZ
+- avgtBodyAccMag
+- avgtGravityAccMag
+- avgtBodyAccJerkMag
+- avgtBodyGyroMag
+- avgtBodyGyroJerkMag
+- avgfBodyAcc-XYZ
+- avgfBodyAccJerk-XYZ
+- avgfBodyGyro-XYZ
+- avgfBodyAccMag
+- avgfBodyAccJerkMag
+- avgfBodyGyroMag
+- avgfBodyGyroJerkMag
 
 ***NOTE:*** the features start with `t` are time-based, with `f` are frequencyDomain based.
+
+- Activity  {laying, sitting, standing, walking, walking.downstairs, walking.upstairs}
+- Subject   [1..30]
 
 The set of variables that were estimated from these signals are: 
 
@@ -38,110 +41,112 @@ The set of variables that were estimated from these signals are:
 - std(): Standard deviation
 - mad(): Median absolute deviation 
 
+## Description
+
+Every single features is an average value aggregate by Activity and Subject.
 
 
 
-
-#Complete list of features
+##Complete list of features
 
 Here are listed all the columns in the tidy dataset:
 
-1. tBodyAcc-mean()-X
-1. tBodyAcc-mean()-Y
-1. tBodyAcc-mean()-Z
-1. tBodyAcc-std()-X
-1. tBodyAcc-std()-Y
-1. tBodyAcc-std()-Z
-1. tBodyAcc-mad()-X
-1. tBodyAcc-mad()-Y
-1. tBodyAcc-mad()-Z
-1. tGravityAcc-mean()-X
-1. tGravityAcc-mean()-Y
-1. tGravityAcc-mean()-Z
-1. tGravityAcc-std()-X
-1. tGravityAcc-std()-Y
-1. tGravityAcc-std()-Z
-1. tGravityAcc-mad()-X
-1. tGravityAcc-mad()-Y
-1. tGravityAcc-mad()-Z
-1. tBodyAccJerk-mean()-X
-1. tBodyAccJerk-mean()-Y
-1. tBodyAccJerk-mean()-Z
-1. tBodyAccJerk-std()-X
-1. tBodyAccJerk-std()-Y
-1. tBodyAccJerk-std()-Z
-1. tBodyAccJerk-mad()-X
-1. tBodyAccJerk-mad()-Y
-1. tBodyAccJerk-mad()-Z
-1. tBodyGyro-mean()-X
-1. tBodyGyro-mean()-Y
-1. tBodyGyro-mean()-Z
-1. tBodyGyro-std()-X
-1. tBodyGyro-std()-Y
-1. tBodyGyro-std()-Z
-1. tBodyGyro-mad()-X
-1. tBodyGyro-mad()-Y
-1. tBodyGyro-mad()-Z
-1. tBodyGyroJerk-mean()-X
-1. tBodyGyroJerk-mean()-Y
-1. tBodyGyroJerk-mean()-Z
-1. tBodyGyroJerk-std()-X
-1. tBodyGyroJerk-std()-Y
-1. tBodyGyroJerk-std()-Z
-1. tBodyGyroJerk-mad()-X
-1. tBodyGyroJerk-mad()-Y
-1. tBodyGyroJerk-mad()-Z
-1. tBodyAccMag-mean()
-1. tBodyAccMag-std()
-1. tBodyAccMag-mad()
-1. tGravityAccMag-mean()
-1. tGravityAccMag-std()
-1. tGravityAccMag-mad()
-1. tBodyAccJerkMag-mean()
-1. tBodyAccJerkMag-std()
-1. tBodyAccJerkMag-mad()
-1. tBodyGyroMag-mean()
-1. tBodyGyroMag-std()
-1. tBodyGyroMag-mad()
-1. tBodyGyroJerkMag-mean()
-1. tBodyGyroJerkMag-std()
-1. tBodyGyroJerkMag-mad()
-1. fBodyAcc-mean()-X
-1. fBodyAcc-mean()-Y
-1. fBodyAcc-mean()-Z
-1. fBodyAcc-std()-X
-1. fBodyAcc-std()-Y
-1. fBodyAcc-std()-Z
-1. fBodyAcc-mad()-X
-1. fBodyAcc-mad()-Y
-1. fBodyAcc-mad()-Z
-1. fBodyAccJerk-mean()-X
-1. fBodyAccJerk-mean()-Y
-1. fBodyAccJerk-mean()-Z
-1. fBodyAccJerk-std()-X
-1. fBodyAccJerk-std()-Y
-1. fBodyAccJerk-std()-Z
-1. fBodyAccJerk-mad()-X
-1. fBodyAccJerk-mad()-Y
-1. fBodyAccJerk-mad()-Z
-1. fBodyGyro-mean()-X
-1. fBodyGyro-mean()-Y
-1. fBodyGyro-mean()-Z
-1. fBodyGyro-std()-X
-1. fBodyGyro-std()-Y
-1. fBodyGyro-std()-Z
-1. fBodyGyro-mad()-X
-1. fBodyGyro-mad()-Y
-1. fBodyGyro-mad()-Z
-1. fBodyAccMag-mean()
-1. fBodyAccMag-std()
-1. fBodyAccMag-mad()
-1. fBodyBodyAccJerkMag-mean()
-1. fBodyBodyAccJerkMag-std()
-1. fBodyBodyAccJerkMag-mad()
-1. fBodyBodyGyroMag-mean()
-1. fBodyBodyGyroMag-std()
-1. fBodyBodyGyroMag-mad()
-1. fBodyBodyGyroJerkMag-mean()
-1. fBodyBodyGyroJerkMag-std()
-1. fBodyBodyGyroJerkMag-mad()
+1. avgtBodyAcc-mean()-X
+1. avgtBodyAcc-mean()-Y
+1. avgtBodyAcc-mean()-Z
+1. avgtBodyAcc-std()-X
+1. avgtBodyAcc-std()-Y
+1. avgtBodyAcc-std()-Z
+1. avgtBodyAcc-mad()-X
+1. avgtBodyAcc-mad()-Y
+1. avgtBodyAcc-mad()-Z
+1. avgtGravityAcc-mean()-X
+1. avgtGravityAcc-mean()-Y
+1. avgtGravityAcc-mean()-Z
+1. avgtGravityAcc-std()-X
+1. avgtGravityAcc-std()-Y
+1. avgtGravityAcc-std()-Z
+1. avgtGravityAcc-mad()-X
+1. avgtGravityAcc-mad()-Y
+1. avgtGravityAcc-mad()-Z
+1. avgtBodyAccJerk-mean()-X
+1. avgtBodyAccJerk-mean()-Y
+1. avgtBodyAccJerk-mean()-Z
+1. avgtBodyAccJerk-std()-X
+1. avgtBodyAccJerk-std()-Y
+1. avgtBodyAccJerk-std()-Z
+1. avgtBodyAccJerk-mad()-X
+1. avgtBodyAccJerk-mad()-Y
+1. avgtBodyAccJerk-mad()-Z
+1. avgtBodyGyro-mean()-X
+1. avgtBodyGyro-mean()-Y
+1. avgtBodyGyro-mean()-Z
+1. avgtBodyGyro-std()-X
+1. avgtBodyGyro-std()-Y
+1. avgtBodyGyro-std()-Z
+1. avgtBodyGyro-mad()-X
+1. avgtBodyGyro-mad()-Y
+1. avgtBodyGyro-mad()-Z
+1. avgtBodyGyroJerk-mean()-X
+1. avgtBodyGyroJerk-mean()-Y
+1. avgtBodyGyroJerk-mean()-Z
+1. avgtBodyGyroJerk-std()-X
+1. avgtBodyGyroJerk-std()-Y
+1. avgtBodyGyroJerk-std()-Z
+1. avgtBodyGyroJerk-mad()-X
+1. avgtBodyGyroJerk-mad()-Y
+1. avgtBodyGyroJerk-mad()-Z
+1. avgtBodyAccMag-mean()
+1. avgtBodyAccMag-std()
+1. avgtBodyAccMag-mad()
+1. avgtGravityAccMag-mean()
+1. avgtGravityAccMag-std()
+1. avgtGravityAccMag-mad()
+1. avgtBodyAccJerkMag-mean()
+1. avgtBodyAccJerkMag-std()
+1. avgtBodyAccJerkMag-mad()
+1. avgtBodyGyroMag-mean()
+1. avgtBodyGyroMag-std()
+1. avgtBodyGyroMag-mad()
+1. avgtBodyGyroJerkMag-mean()
+1. avgtBodyGyroJerkMag-std()
+1. avgtBodyGyroJerkMag-mad()
+1. avgfBodyAcc-mean()-X
+1. avgfBodyAcc-mean()-Y
+1. avgfBodyAcc-mean()-Z
+1. avgfBodyAcc-std()-X
+1. avgfBodyAcc-std()-Y
+1. avgfBodyAcc-std()-Z
+1. avgfBodyAcc-mad()-X
+1. avgfBodyAcc-mad()-Y
+1. avgfBodyAcc-mad()-Z
+1. avgfBodyAccJerk-mean()-X
+1. avgfBodyAccJerk-mean()-Y
+1. avgfBodyAccJerk-mean()-Z
+1. avgfBodyAccJerk-std()-X
+1. avgfBodyAccJerk-std()-Y
+1. avgfBodyAccJerk-std()-Z
+1. avgfBodyAccJerk-mad()-X
+1. avgfBodyAccJerk-mad()-Y
+1. avgfBodyAccJerk-mad()-Z
+1. avgfBodyGyro-mean()-X
+1. avgfBodyGyro-mean()-Y
+1. avgfBodyGyro-mean()-Z
+1. avgfBodyGyro-std()-X
+1. avgfBodyGyro-std()-Y
+1. avgfBodyGyro-std()-Z
+1. avgfBodyGyro-mad()-X
+1. avgfBodyGyro-mad()-Y
+1. avgfBodyGyro-mad()-Z
+1. avgfBodyAccMag-mean()
+1. avgfBodyAccMag-std()
+1. avgfBodyAccMag-mad()
+1. avgfBodyBodyAccJerkMag-mean()
+1. avgfBodyBodyAccJerkMag-std()
+1. avgfBodyBodyAccJerkMag-mad()
+1. avgfBodyBodyGyroMag-mean()
+1. avgfBodyBodyGyroMag-std()
+1. avgfBodyBodyGyroMag-mad()
+1. avgfBodyBodyGyroJerkMag-mean()
+1. avgfBodyBodyGyroJerkMag-std()
+1. avgfBodyBodyGyroJerkMag-mad()

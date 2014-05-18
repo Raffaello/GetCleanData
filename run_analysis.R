@@ -73,10 +73,10 @@ rm(activityLabels)
 
 message(" - X...")
 Xtrain <- read.table(trainFiles[11],header=FALSE)
-message(" - X => Extracting mean() and std() feacture in Xtrain...")
+message(" - X => Extracting mean() and std() features in Xtrain...")
 Xtrain <- Xtrain[c(features)]
 Xtest  <- read.table(testFiles[11],header=FALSE) 
-message(" - X => Extracting mean() and std() feacture in Xtest...")
+message(" - X => Extracting mean() and std() features in Xtest...")
 Xtest  <- Xtest[c(features)]
 X      <- rbind(Xtrain, Xtest)
 names(X) <- featuresName[c(features)]
@@ -119,6 +119,7 @@ print(c(nRows, dim(tidyset)[2]))
 #Raw Pre initialization
 colNames <- names(tidyset)
 avgtidyset <- tidyset[1:nRows,!colNames %in% ("Activity") & !colNames %in% ("Subject")]
+names(avgtidyset) <- paste("avg",names(tidyset[-100:-101]),sep="")
 avgtidyset <- cbind(Activity=activityLabel,Subject=0, avgtidyset)
 rm(colNames);
 
@@ -142,7 +143,6 @@ for (i in 1:subjectMax) {
     #  if(is.numeric(x)) mean(x)
     #  else x
    # } ))
-    
   }
 }
 rm(activityLabel)
